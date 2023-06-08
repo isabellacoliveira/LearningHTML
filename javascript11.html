@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Somatórias</title>
+<!-- Crie um algorítmo que faça a somatória dos números de 1 até 1000 -->
+</head>
+<body>
+	<button id="botao1">Pressione</button>
+	<h2 id="t2">...</h2>
+	<label>Somatória dos números de 1 até 1000</label>
+</body>
+</html>
+<script type="text/javascript">
+	// primeiramente, criaremos o botão que fará a soma entre esses números 
+	// para isso, utilizaremos "botao1.onclick" (botao1 fará referência ao id da tag button
+	// enquanto "onclick" criará o botão que seguirá a função colocada após "function"
+	botao1.onclick = function (){
+		// iniciaremos a soma com o número 1 
+		let soma = 1; 
+		// adotaremos as seguintes condições
+		// O que é o for no JavaScript: A instrução for cria um loop que consiste em três expressões opcionais, dentro de parênteses e separadas por ponto e vírgula, seguidas por uma declaração ou uma sequência de declarações executadas em sequência.
+		// portanto, o primeiro número vale 1. Ao realizar o loop, "i" passa a valer 2 e assim por diante
+		// porém isso só é feito até que o valor do número seja menor ou igual a 1000 
+		// e a cada loop, ao valor de x será acrescentado mais um
+		// ou seja, "i++" (que é o mesmo que x = x + 1)
+		// A instrução for cria um loop que consiste em três expressões opcionais, dentro de parênteses e separadas por ponto e vírgula, seguidas por uma declaração ou uma sequência de declarações executadas em sequência.
+		// sintaxe: for ([inicialização]; [condição]; [expressão final])
+        // declaração
+		for (let i=2; i<=1000; i++)
+		// Primeiramente é necessário entender que o console é um objeto, e o log() é apenas um método deste objeto
+	 	// Cada um tem a sua utilização específica, o log() tem como sua função emitir mensagens de depuração do sistema
+	 	// Este método de console vai enviar os dados diretamente para o console do navegador
+	 	// console log (SOMA) faz uma referência a variável soma, cujo o resultado será exibido
+	 	// Normalmente utilizamos o console.log para acompanhar os valores de variáveis durante a execução de algum código
+		{
+			soma = soma + i; 
+			console.log(soma);
+		}
+		t2.textContent = soma;
+	}
+</script>

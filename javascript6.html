@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JAVASCRIPT</title>
+</head>
+<body>
+<!-- Exercício 4: escreva uma função Javascript que resolva uma 
+	equação de 2o grau. Obter do usuário dos coeficientes da 
+	equação: a**2 + b*x + c = 0. Coloque o resultado em um 
+	elemento H1 -->
+<!-- obs: se delta < 0, não há raizes -->
+<!-- se delta = 0, há apenas uma raiz -->
+<input type="number" id="inpA">
+<input type="number" id="inpB">
+<input type="number" id="inpC">
+<button id="botao">Calcular</button>
+<h1 id="raiz1">...</h1>
+<h1 id="raiz2">...</h1>
+</body>
+</html>
+<script type="text/javascript">
+	botao.onclick = function (){
+		// definir variáveis
+		var a, b, c, r1, r2, delta;
+		// para o usuário inserir os valores 
+		a = Number (inpA.value);
+		b = Number (inpB.value);
+		c = Number (inpC.value);
+		// cálculo que será feito 
+		delta = (b**2) - (4 * a * c);
+		// as raízes serão valores 
+		r1 = Number;
+		r2 = Number; 
+
+		delta == (b**2) - (4 * a * c);
+		//se 
+		if (delta < 0)
+			// então 
+		{
+		 	raiz1.textContent = "Delta Negativo, não há raízes";
+			raiz2.textContent = "Delta Negativo, não há raízes";
+		}
+
+			//senão se
+		else if (delta == 0)
+		{
+			r1 = -b / (2 * a);
+			resultado1.textContent = "Raiz Única";
+		}
+			//senão
+		else {
+			// calcular as raízes 
+			r1 = (-b + delta**0,5)/(2*a);
+			r2 = (-b - delta**0,5)/(2*a);
+			// se delta não for <= 0 então duas raízes serão calculadas 
+			// através da fórmula abaixo 
+			// o texto "Raiz 1" ou "Raiz 2" aparecerá junto ao resultado 
+			// das raizes r1 e r2 
+			raiz1.textContent = "Raiz 1" + r1;
+			raiz2.textContent = "Raiz 2" + r2;
+
+		}
+	}
+</script>

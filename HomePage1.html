@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<meta charset="utf-8">
+				<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Home Page 1</title>
+		<style type="text/css">
+			* {
+ 				box-sizing: border-box;
+			  }
+			
+		  body {
+			    font-family: Arial;
+				margin: 0px;
+				}
+			/* 
+			Explicar Box-sizing: 
+            altera a maneira na qual os tamanhos de elementos serão calculados:
+            -content-box: considera somente a largura e altura do elemento, todo o resto (padding, margin, outline, border, etc.) é somado ao tamanho do elemento. Ex.: uma div com a largura de 10px e padding de 5px resulta em uma div que ocupa 20px de largura na tela (10px de conteúdo e 5 px de padding para cada lado)
+            -border-box: considera a largura e altura do elemento, assim como seu padding e border, todo o resto (margin, outline, etc.) é somado ao tamamnho do elemento. Ex.: uma div com a largura de 15px e padding de 5px resulta em uma div que ocupa 15px de largura na tela (10px de conteúdo subtraído a 5px de padding em cada lado)
+            */
+
+			.cabecalho {
+						background-color: yellow;
+						color: blue;
+						border: 1px solid blue;
+						text-align: center;
+						padding: 20px;
+						font-size: 40px;
+						
+			}
+
+			 .menu {
+		            display: flex; 
+		            justify-content: space-around; 
+		            align-items: center; 
+		            flex-direction: column; 
+        }
+
+           .menu a {
+		            text-decoration: none;
+		            padding: 3px;
+		            transition: .15s ease;
+		            color: gray;
+        }
+        
+        .menu a:hover {
+            			color: blue;
+        } 
+
+			.conteudo1, .conteudo2, .conteudo3 {
+												width:100%; 
+												height: 400px;
+			}
+
+			.corpo {
+					display:flex;
+					flex-direction: column; 
+					flex-wrap: wrap; 
+			}
+
+			.conteudo1 img {
+							width: 100%;
+							height: 400px;
+							padding: 0px;
+							/* object-fit: contain; */
+			}
+			.conteudo2 {
+						overflow: auto;
+						padding: 0 16px;
+
+			}
+
+			.conteudo2 h3 {
+						   text-align: center;
+			}
+
+
+			@media only screen and (min-width: 800px) {
+			.menu {
+					flex-direction: row;
+				}
+				menu, .corpo {
+							  flex-direction: row;
+				}
+				.conteudo1 {
+							width: 40%;
+				}
+				.conteudo2 {
+							width: 60%;
+								}
+				
+				.conteudo3 {
+            			margin-top: 32px;
+            			text-align: center;
+        		}
+
+        		.conteudo3 video {
+            					  width: 100%;
+            					  max-width: 720px;
+            					  height: 400px;
+
+        		}
+
+        		.rodape {
+			             display: flex;
+			             justify-content: center;
+			             align-items: center;
+			             flex-flow: column;
+			             background-color: #000fff;
+			             text-align: center;
+			             color: #f1f1f1;
+			             font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+        		}
+
+        		.rodape p {
+            				margin: 8px 0;
+       			}
+
+       			.rodape {
+			             display: grid;
+			             grid-template-areas: 
+			                    "title phone"
+			                    "title address";
+                		 padding: 10px;
+                }
+
+            .rodape #titulo-rodape {
+					                grid-area: title;
+					                margin-right: 30px
+                }
+
+            .rodape #telefone {
+				                grid-area: phone;
+				                text-align: left;
+                }
+            
+            .rodape #endereco {
+				                grid-area: address;
+				                text-align: left;
+                }
+            }
+
+		</style>
+</head>
+	<body>
+		
+		<div class="cabecalho">
+			Empresa XY
+		</div>
+
+		<div class="menu">
+			<a href="#">Localização</a>
+			<a href="#">Missão</a>
+			<a href="#">Valor</a>
+		</div>
+
+		<div class="corpo">
+			
+			<div class="conteudo1">
+				<picture>
+					<source srcset="imagem1.jpg" media="(min-width: 800px)">
+						<img src="imagem2.jpg">
+				</picture>
+			</div>
+			
+			<div class="conteudo2">
+				<h3>Notícias</h3>
+					<p>
+						I remembered black skies
+						The lightning all around me
+					</p>
+					<p>
+						I remembered each flash
+						As time began to blur
+					</p>
+					<p>
+						Like a startling sign
+						That fate had finally found me
+					</p>
+					<p>
+						And your voice was all I heard
+						That I get what I deserve
+					</p>
+					<p>
+						So give me reason
+						To prove me wrong
+					</p>
+					<p>
+						To wash this memory clean
+						Let the floods cross
+						The distance in your eyes
+					</p>
+					<p>
+						Give me reason
+						To fill this hole
+						Connect this space between
+					</p>
+					<p>
+						Let it be enough to reach the truth that lies
+						Across this new divide
+					</p>
+					<p>
+						There was nothing in sight
+						But memories left abandoned
+					</p>
+					<p>
+						There was nowhere to hide
+						The ashes fell like snow
+					</p>
+					<p>
+						And the ground caved in
+						Between where we were standing
+					</p>
+					<p>
+						And your voice was all I heard
+						That I get what I deserve
+					</p>
+					<p>
+						In every loss, in every lie
+						In every truth that you'd deny
+						And each regret, and each goodbye
+					</p>
+					<p>
+						Was a mistake too great to hide
+						And your voice was all I heard
+						That I get what I deserve
+					</p>
+			</div>
+			
+			<div class="conteudo3">
+				<video src="sim.mp4" controls>
+					
+				</video>
+			</div>
+
+		</div>
+
+		<div class="rodape">
+			<h2 id="titulo-rodape">Empresa XY</h2>
+				<p id="endereco">
+					<i class="fas fa-map-marker-alt"></i>
+					Rua Alameda das Américas, nº 347 - Boqueirão, Praia Grande
+				</p>
+				<p id="telefone">
+					<i class="fa-solid fa-phone"></i>
+					+55 (13) 3474-6105
+				</p>
+		</div>
+
+	</body>
+</html>

@@ -1,0 +1,232 @@
+<!-- Isabella C. Oliveira 
+		 Rafaela C -->
+<!DOCTYPE html>
+<html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<head>
+	<title>	</title>
+	<style type="text/css">
+		* {box-sizing: border-box; margin: 0px}
+		#d1 {height:400px; width: 50%; overflow: auto; 
+			 float: left; border:1px solid blue;}
+		#d2 {height:400px; width: 50%; overflow: auto; 
+			 float: left; border:1px solid blue;}
+	</style>
+</head>
+<body>
+	<canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+  <div id="d1">
+  	<button id="botao">Limpar</button><br/>
+  	<button id="b1">Listar</button>
+  	<input type="number" id="input1"/>
+  	<button id="b2">Incluir</button><br/>
+  	<label>Operações:</label>
+		<button id="b3">Soma</button><br/>
+  	<button id="b4">Maior</button><br/>
+  	<button id="b5">Menor</button><br/>
+  	<button id="b6">Média</button><br/>
+  	<button id="b7">Mediana</button><br/>
+  	<button id="b8">Plotar Gráfico</button>
+  	<h4>Calcular os itens acima referente aos números no vetor, sem usar função prontas do javascript. Exceção para a função "sort" usada para colocar os números em ordem para cálculo da mediana.</h4>
+  	<br>
+  	<h4>Alterar a função do botão Listar para limpar a DIV antes de incluir os parágrafos com os números. Pesquisar na Internet "hasChildNodes" e "removeChild"</h4>
+  	<br/>
+  	<h4>Plotar grafico com os números. Eixo-x corresponde aos índices do vetor; Eixo-y aos números armazenados no vetor.</h4>
+  
+  </div>
+ 
+  <div id="d2">
+
+  </div>
+</body>
+</html>
+<script type="text/javascript">
+// a partir dessa variável "let" o progama armazena no vetor todos os números digitados pelo usuário
+	let numeros = [];
+
+	botao.onclick = function() { 
+		//alert("OK");
+		//criar o parágrafo
+		// enquanto(d2 = div2) // o nome do elemento é colocado ("d2"), após isso o "hasChildNodes"
+		while(d2.hasChildNodes)
+			// significa que ele removerá o primeiro filho (x = 0) - primeiro filho da primeira posição
+		{
+			d2.removeChild(d2.firstChild);
+		}
+		// A propriedade length de um objeto String contém o comprimento da string. length é uma propriedade read-only (somente leitura) de instâncias de string. 
+		// numeros é a variável que foi criada em cima 
+		for( let x = 0 ; x < numeros.length ; x = x + 1 )
+		{
+			// utilizamos essa estrutura para que seja exibido na tela 
+			let p = document.createElement("p");
+		   // definir o conteúdo do parágrafo
+		  p.textContent = numeros[x];  //"Fatec";
+		  d2.appendChild(p);
+		}
+	}
+
+// esse botão listará os números inseridos pelo usuário, que estão armazenados no vetor 
+	b1.onclick = function() { 
+		//alert("OK");
+		//criar o parágrafo
+		for( let x = 0 ; x < numeros.length ; x = x + 1 )
+		{	
+			// a cada vez que o botão é apertado , um novo parágrafo é criado 
+			// posição 0 = primeira posição
+			let p = document.createElement("p");
+	    // definir o conteúdo do parágrafo
+	    p.textContent = numeros[x];  //"Fatec";
+	    d2.appendChild(p);
+		}
+	}
+
+// esse botão incluirá no vetor os valores digitados 
+	b2.onclick = function() {
+		// pegar o valor no input, converter para número
+		// colocar o número no vetor
+		let n = Number(input1.value);
+		// "n" corresponde a variável 
+		// essa linha é responsável por incluir no vetor os valores , o push insere uma célula nova no final do vetor
+		numeros.push(n);
+	}
+
+// esse botão fará a soma dos elementos do vetor 
+	b3.onclick = function() {
+		// o algoritmo começará a soma a partir do numero da posição "0"
+		// por isso :
+		let soma = 0;
+		// as condições são atendidas e a cada vez que o algoritmo se repete, é acrescentado 1 ao valor de sua posição 
+		// até que chegue a última posição 
+		for (let x = 0; x<numeros.length; x++)
+		{
+			// x é a variável de posições
+			soma += numeros[x];
+		}
+		// exibir o resultado 
+		let p = document.createElement("p");
+		p.textContent = soma;
+		d2.appendChild(p);
+	}
+
+// esse botão mostrará qual é o maior valor inserido no vetor 
+	b4.onclick = function(){
+		// definimos a variável "maior", iniciando na posição "0"
+		let maior = numeros[0]; 
+		for (let x = 1; x<numeros.length; x++)
+		{
+			// se a variável números [x representa a posição]>maior(variável de acordo com o número entre[])
+			if (numeros[x]>maior)
+				// o valor de maior é = a variável números e a posição [x - posição]
+			// o algorítmo exibirá o número que está na posição de maior
+				maior=numeros[x];
+		}
+		let p = document.createElement("p");
+		p.textContent = maior;
+		d2.appendChild(p);
+	}
+
+// esse botão exibirá o menor número do vetor 
+	b5.onclick = function(){
+		let menor = numeros[0]; 
+		// tamanho da lista
+		for (let x = 1; x<numeros.length; x++)
+		{
+			if (numeros[x]<menor)
+				menor=numeros[x];
+		}
+		let p = document.createElement("p");
+		p.textContent = menor;
+		d2.appendChild(p);
+	}
+
+// esse botão fará a média aritmética 
+	b6.onclick = function() {
+		// devemos somar todos os números e dividir pela quantidade dos mesmos
+		let soma = 0;
+		for (let x = 0; x<numeros.length; x++)
+		{
+			soma += numeros[x];
+		}
+		// média será o resultado da soma / pela quantidade de números do vetor 
+		let media = soma / numeros.length; 
+
+		let p = document.createElement("p");
+		p.textContent = media;
+		d2.appendChild(p);
+	}
+	
+	// esse botão exibirá a mediana do vetor 
+	b7.onclick = function() {
+		// criemos a variável
+		let mediana = 0;
+		// colocar os números em ordem crescente // variável = listaOrdenada
+		let listaOrdenada = numeros.sort(function(a,b){return a-b})
+		// debugar 
+		console.log(listaOrdenada)
+		// se a quantidade de numeros dividida por 2 for == a 0 , siginifica que há um número "par" de elementos
+		// = atribui // == compara // para a quantidade "par" de números 
+		if(numeros.length % 2 == 0)
+		{
+			// então criemos mais duas variáveis (meioSupremo e meioInferior) para encontrar os dois números do meio
+			// que serão somados e divididos por 2 
+			// meioSupremo = a lista de números (ordenados: menor p/ maior) / 2
+			let meioSupremo = listaOrdenada.length/2;
+			// acima, dividimos a quantidade de números por 2 , obteremos um valor (um dos números do meio)
+			let meioInferior = meioSupremo - 1;
+			// pegamos o valor dessa posição (meioSupremo) e subtraímos 1 para obter o valor da posição do segundo número
+			// faremos a mediana: somando os valores armazenados nas posições das variáveis e dividindo por 2 
+			mediana = (listaOrdenada[meioSupremo]+listaOrdenada[meioInferior])/2;
+		}	
+		// senão: significa que o número é impar
+		else
+		{
+			// precisamos achar qual o número do meio para exibir, por isso pega-se a quantidade de números e tira-se 1 
+			// assim o valor das posições fica "par" e então é dividido por 2 
+			mediana = (listaOrdenada[(listaOrdenada.length-1)/2]);
+		}
+
+		let p = document.createElement("p");
+		p.textContent = mediana;
+		d2.appendChild(p);
+	}
+
+	b8.onclick = function(){
+		// se a quantidade de números for 0, escreva (alert)
+		if (numeros.length === 0) alert('A lista está vazia. Adicione um número.');
+		else {
+			// definindo os vetores X e Y (x vertical - Y na horizontal)
+		let xValues = [];
+		let yValues = [];
+
+		for (let x = 0; x<numeros.length; x++) {
+			// valores que serão inseridos pelo usuário
+			xValues[x] = x;
+			// posição que esses números ocupam
+			yValues[x] = numeros[x];
+		}
+
+	new Chart("myChart", {
+  							type: "line",
+ 										 data: {
+   											 labels: xValues,
+    													datasets: [{
+      fill: false,
+      lineTension: 0,
+      backgroundColor: "rgba(0,0,255,1.0)",
+      borderColor: "rgba(0,0,255,0.1)",
+      data: yValues
+    }]
+  },
+  options: {
+    legend: {display: false},
+  }
+});
+	let p = document.createElement('canvas');
+		canvas.id = 'myChart';
+		d2.appendChild(canvas);
+
+		new Chart('myChart', Chart);
+	}
+}
+
+</script>

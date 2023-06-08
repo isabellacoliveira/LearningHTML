@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>fatec</title>
+		<h1 id="t1">Fatec</h1>
+		<h1>Praia Grande</h1>
+		<p>Parágrafo 1</p>
+		<p>Parágrafo 2</p>
+		<p>Parágrafo 3</p>
+		<button id="bx">Pressione</button>
+</head> <body></body>
+</html>
+<script type="text/javascript">
+	// usar CSS dentro do Javascript: ao ser pressionado o botão, o título "FATEC" fica em verde
+	bx.onclick = function(){
+		t1.style.color = "green";
+		// criar uma variável parágrafos
+		var paragrafos = document.querySelectorAll("p");
+		// x++
+		for(var x = 0; x <= paragrafos.length - 1; x++)
+		{
+			// nome da variável [x = letra inserida na condição] + atribudo de CSS (style.color)
+			paragrafos[x].style.color = "#0000FF"
+		}
+		for (var y of paragrafos)
+		{
+			y.style.color = "#FF0000";
+		}
+	}
+</script>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JAVASCRIPT</title>
+</head>
+<body>
+<!-- criamos um botão com "button" -->
+	<h1 id="titulo1">FATEC</h1>
+	<h1>XXXX</h1>
+	<button id="botao1">PRESSIONAR</button>
+<!-- no javascript há uma diferença entre letras maiúsculas e minusculas -->
+	<input type="number" id="inp1">
+	<input type="number" id="inp2">
+	<button id="botao2">Calcular</button>
+	<h1 id="resultado">...</h1>
+	
+</body>
+</html>
+<script type="text/javascript">
+// com onclick, agora o botão está aberto para que seja definida uma função a ele 
+// com function 
+// alert
+// com text.Content = representa o conteúdo do elemento
+/* ao inserir "titulo1" antes de textContent, o botão, ao ser apertado, exibirá */
+/* o título 1 */
+		botao1.onclick = function () {
+			alert(titulo1.textContent);
+		}
+	</script>
+<script type="text/javascript">
+	botao2.onclick = function() {
+		// definir as variáveis
+		var n1, n2; 
+		// digitamos input e value pois o usuário digitará o valor 
+		n1 = Number(inp1.value);
+		n2 = Number(inp2.value);
+		/* atribuir novo valor a textContent */
+		resultado.textContent = n1 + n2;
+		// o h1 "..." mudará para o resultado da soma n1 + n2 
+	}
+</script>

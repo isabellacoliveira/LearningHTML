@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<button id="b1">Pressione</button>
+	<h2 id="t2">...</h2>
+</body>
+</html>
+<script type="text/javascript">
+	// fazer a soma dos numeros de 1 até 500 
+	// criar um botao
+	b1.onclick = function(){
+	// a variável soma começará no 0 
+	// a estrutura de repetição fará o loop obedecendo às condições 
+	// a estrutura será executada até que o número seja = a 500 
+		let soma = 0; 
+		for(let i=1; i<=500; i++)
+		{
+			soma = soma + i/2;
+			console.log(soma);
+		}
+		// o que estiver digitado no h2 ("...") será mudado para o valor da soma entre os números 
+		t2.textContent = soma;
+	}
+</script>

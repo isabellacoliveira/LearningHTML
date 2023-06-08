@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+<!-- Exercício 1: verificar, por meio da função javascript , se a palavra inserida pelo 
+usuário em um input é igual a "FIM", se for, mudar conteúdo de "resultado" (elemento h1) 
+para "igual a FIM", senão mudar resultado para "Diferente de FIM" -->
+<input type="" id="entrada">
+<button id="botao1">Pressione</button>
+<h1 id="resultado">...</h1>
+</body>
+</html>
+<script type="text/javascript">
+	botao1.onclick = function(){
+		// texto 1 
+		var t1; 
+		// entrada = id inserido em input 
+		t1 = entrada.value;
+		// se t1 for = a FIM 
+		if (t1 == "FIM")
+		// então escreva
+			{resultado.textContent = "Igual a FIM";}
+		// senão, escreva
+		else 
+			{resultado.textContent = "Diferente de FIM";}
+	}
+</script>
